@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 240, 245; /* Lavender Blush */
+  --background-end-rgb: 240, 248, 255;   /* Alice Blue */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 10, 5, 15; /* Darker base */
+    --background-end-rgb: 20, 10, 30;  /* Darker end */
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom styles for the personal hub */
+.card {
+  @apply bg-white rounded-lg shadow-md p-6 transition-shadow duration-300 hover:shadow-lg;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-md font-semibold transition-colors duration-300;
+}
+
+.btn-primary {
+  @apply bg-pink-500 text-white hover:bg-pink-600;
+}
+
+.btn-secondary {
+  @apply bg-purple-200 text-purple-800 hover:bg-purple-300;
+}
+
+.icon {
+  @apply inline-block w-5 h-5 mr-2 align-middle;
+}
+
